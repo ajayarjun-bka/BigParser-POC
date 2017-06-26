@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.management.RuntimeErrorException;
+
 /**
  * BpData This class implements the methods needed to connect to BigParser's API
  * to authenticate and fetch the required data
@@ -44,8 +46,8 @@ final public class BpData {
 			output.flush();
 			output.close();
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new Exception(
-						String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeErrorException(
+						null, String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -55,7 +57,6 @@ final public class BpData {
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.exit(0);
 		}
 		return response.toString();
 	}
@@ -81,8 +82,8 @@ final public class BpData {
 			conn.setRequestMethod("GET");
 
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new Exception(
-						String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeErrorException(
+						null, String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -92,7 +93,6 @@ final public class BpData {
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.exit(0);
 		}
 		return response.toString();
 	}
@@ -138,11 +138,14 @@ final public class BpData {
 	public static String fetchData(String emailId, String password, String data) {
 		String uri = "https://www.bigparser.com/APIServices/api/query/table?startIndex=0&endIndex=50";
 		String authId = BpData.login(emailId, password);
-		Map<String, String> header = new HashMap<String, String>();
-		header.put("Content-Type", "application/json");
-		header.put("authId", authId);
-		String response = BpData.post(uri, header, data);
-		return response;
+		if (authId != null) {
+			Map<String, String> header = new HashMap<String, String>();
+			header.put("Content-Type", "application/json");
+			header.put("authId", authId);
+			String response = BpData.post(uri, header, data);
+			return response;
+		}
+		return "Cannot connect to servers ";
 	}
 
 	/**
@@ -160,10 +163,13 @@ final public class BpData {
 	public static String fetchHeader(String emailId, String password, String gridId) {
 		String uri = String.format("https://www.bigparser.com/APIServices/api/grid/headers?gridId=%s", gridId);
 		String authId = BpData.login(emailId, password);
-		Map<String, String> header = new HashMap<String, String>();
-		header.put("Content-Type", "application/json");
-		header.put("authId", authId);
-		String response = BpData.get(uri, header);
-		return response;
+		if (authId != null) {
+			Map<String, String> header = new HashMap<String, String>();
+			header.put("Content-Type", "application/json");
+			header.put("authId", authId);
+			String response = BpData.get(uri, header);
+			return response;
+		}
+		return "Cannot connect to servers ";
 	}
 }
