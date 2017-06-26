@@ -2,7 +2,7 @@
 
 This module comprises of `BpData.java`. Import the BpData.java into your class to use the methods available to interact with BigParser's API's. Refer the `app.java` for example and read below to learn how to use the methods.
 
-**Availalble Methods:**
+**Available Methods:**
 ```java
  public static String fetchHeader(String emailId, String password, String gridId)
 ```
@@ -16,7 +16,7 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
 ```java
  public static String fetchHeader(String emailId, String password, String gridId)
 ```
-*Fetches rows from the specified grid.*
+*Fetches the structure of the specified grid.*
 
 **Arguments**
 
@@ -24,7 +24,7 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
  
    `emailId` - emailId/username of your account
    
-   `password` - password to loging into bigparser account
+   `password` - password to login into BigParser account
    
    `gridId` - Id of the grid to be queried
    
@@ -72,7 +72,7 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
    
    **Code:** *Appropriate Error code will be displayed*
    
-   **Content:** *Error message will be dispplayed in the reponse*
+   **Content:** *Error message will be displayed in the response*
 ##   
 #### fetchData
 ```java
@@ -86,7 +86,7 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
  
    `emailId` - emailId/username of your account
    
-   `password` - password to loging into bigparser account
+   `password` - password to login into BigParser account
    
    `data` - comprises the options to query the grid in the form of JSON object.
    
@@ -167,3 +167,4 @@ BpData.fetchData("abc@xyz.com", "password","{\"gridId\":\"57a33a99e4b019ed65d2b0
    
    **Content:** *Error message will be dispplayed in the reponse*
    ##
+
