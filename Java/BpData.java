@@ -44,7 +44,8 @@ final public class BpData {
 			output.flush();
 			output.close();
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new RuntimeException(String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeException(
+						String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -79,7 +80,8 @@ final public class BpData {
 			conn.setRequestMethod("GET");
 
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new RuntimeException(String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeException(
+						String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -110,10 +112,15 @@ final public class BpData {
 		String body = String.format("{\"emailId\":\"%s\",\"password\":\"%s\"}", emailId, password);
 		String response = BpData.post(uri, header, body);
 		String authId = null;
-		if (response.length()>0) {
-			int start = response.indexOf("\"authId\"") + 10;
-			int end = response.indexOf("\",\"subscriptionInfo\"");
-			authId = response.substring(start, end);
+		if (response.length() > 0) {
+			try {
+				int start = response.indexOf("\"authId\"") + 10;
+				int end = response.indexOf("\",\"subscriptionInfo\"");
+				authId = response.substring(start, end);
+			} catch (RuntimeException e) {
+				System.out.println(e.getMessage());
+				System.exit(0);
+			}
 		}
 		return authId;
 	}
@@ -141,7 +148,7 @@ final public class BpData {
 			String response = BpData.post(uri, header, data);
 			return response;
 		}
-		return "Cannot connect to servers ";
+		return "check your request";
 	}
 
 	/**
@@ -166,6 +173,6 @@ final public class BpData {
 			String response = BpData.get(uri, header);
 			return response;
 		}
-		return "Cannot connect to servers ";
+		return "check your request";
 	}
 }
