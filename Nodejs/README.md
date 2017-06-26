@@ -15,6 +15,8 @@ Refer `app.js` for example and read below to learn how to use the methods.
 ```javascript
  fetchData(emailId, password, data, callback)
 ```
+Replace emailId and password in function calls with your bigparser account details.
+
 ## Description of the Methods:
 
 
