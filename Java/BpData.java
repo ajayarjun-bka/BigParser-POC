@@ -8,8 +8,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.management.RuntimeErrorException;
-
 /**
  * BpData This class implements the methods needed to connect to BigParser's API
  * to authenticate and fetch the required data
@@ -46,8 +44,7 @@ final public class BpData {
 			output.flush();
 			output.close();
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new RuntimeErrorException(
-						null, String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeException(String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -82,8 +79,7 @@ final public class BpData {
 			conn.setRequestMethod("GET");
 
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new RuntimeErrorException(
-						null, String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
+				throw new RuntimeException(String.format("Error Code:%s\nMessage%s", conn.getResponseCode(), conn.getResponseMessage()));
 			} else {
 				String temp;
 				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -114,7 +110,7 @@ final public class BpData {
 		String body = String.format("{\"emailId\":\"%s\",\"password\":\"%s\"}", emailId, password);
 		String response = BpData.post(uri, header, body);
 		String authId = null;
-		if (response.length() > 0) {
+		if (response.length()>0) {
 			int start = response.indexOf("\"authId\"") + 10;
 			int end = response.indexOf("\",\"subscriptionInfo\"");
 			authId = response.substring(start, end);
