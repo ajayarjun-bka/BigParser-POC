@@ -40,7 +40,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
 **Sample Call & Response:**
 
   ```javascript
-  BpData.fetchHeader("arjun.bka@gmail.com", "AjayArjun",'57a33a99e4b019ed65d2b00d',(errorMessage, response) => {
+  BpData.fetchHeader("abc@xyz.com", "password",'57a33a99e4b019ed65d2b00d',(errorMessage, response) => {
                 if (errorMessage) {
                     console.log(errorMessage);
                 } else {
@@ -147,7 +147,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
 **Sample Call & Response:**
 
   ```javascript
-BpData.fetchData("arjun.bka@gmail.com", "AjayArjun", {
+BpData.fetchData("abc@xyz.com", "password", {
     'gridId': '57a33a99e4b019ed65d2b00d',
     'rowCount': '2',
     'keywords': ['Wine Bar'],
