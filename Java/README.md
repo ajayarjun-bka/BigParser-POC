@@ -99,12 +99,12 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
 
 * `selectColumnsStoreName` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
 
-**sample format**
+	**sample format**
 
-```javascript
-   "selectColumnsStoreName": [0, 3]
-```
-*columnIds start with zero*
+	```javascript
+	   "selectColumnsStoreName": [0, 3]
+	```
+	*columnIds start with zero*
 
 * `tags`-	*optional* - array of column level filters. 
 
