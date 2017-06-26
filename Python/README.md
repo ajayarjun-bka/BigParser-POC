@@ -10,10 +10,10 @@ Refer `app.py` for example and read below to learn how to use the methods.
 
 **Availalble Methods:**
 ```python
- fetchHeader(emailId, password, gridId, callback)
+ fetchHeader(emailId, password, gridId)
 ```
 ```python
- fetchData(emailId, password, data, callback)
+ fetchData(emailId, password, data)
 ```
 ## Description of the Methods:
 
