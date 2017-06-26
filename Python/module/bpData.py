@@ -93,11 +93,12 @@ class BpData:
     @return String returns the response as JSON in string format
     '''
 
+    @classmethod
     def fetchHeader(self, username, password, gridId):
         authId = BpData.__login(self, username, password)
         uri = "https://www.bigparser.com/APIServices/api/grid/headers?gridId=" + gridId
         headers = {'content-type': 'application/json', 'authId': '' + authId + ''}
-        response = BpData.__get(self,uri, headers)
+        response = BpData.__get(self, uri, headers)
         return response
 
     '''
@@ -111,10 +112,11 @@ class BpData:
     @return String returns the response as JSON in string format
     '''
 
-    def fetchData(self,username, password, data):
-        authId = BpData.__login(self,username, password)
+    @classmethod
+    def fetchData(self, username, password, data):
+        authId = BpData.__login(self, username, password)
         uri = "https://www.bigparser.com/APIServices/api/query/table?startIndex=0&endIndex=50"
         headers = {'content-type': 'application/json', 'authId': '' + authId + ''}
         data = data
-        response = BpData.__post(self,uri, headers, data)
+        response = BpData.__post(self, uri, headers, data)
         return response
