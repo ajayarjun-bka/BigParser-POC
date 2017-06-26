@@ -23,7 +23,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
 ```javascript
  fetchHeader(emailId, password, gridId, callback)
 ```
-*Fetches rows from the specified grid.*
+*Fetches the header of the specified grid.*
 
 **Arguments**
 
@@ -99,15 +99,14 @@ Refer `app.js` for example and read below to learn how to use the methods.
 
 *Required:*
  
-   `emailId` - emailId/username of your account
+   `emailId` - emailId/username of your account.
    
-   `password` - password to login into BigParser account
-   
-   `callback` - callback function to handle the response
+   `password` - password to login into BigParser account.
    
    `data` - comprises the options to query the grid in the form of JSON object.
    
-  
+   `callback` - callback function to handle the response.
+   
    ***List of allowed options in JSON object***
    
 * `gridId` - *required* - gridId on which you like to perform search
