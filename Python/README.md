@@ -5,6 +5,8 @@ This module comprises of `BpData.py`.Copy the module folder into the root direct
 from module import BpData
 ``` 
 Refer `app.py` for example and read below to learn how to use the methods.
+#### Dependencies:
+`requests` module has to be installed for this module to work. Please install `requests`, version `^2.18.1` before importing this module. 
 
 **Availalble Methods:**
 ```python
