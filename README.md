@@ -4,3 +4,4 @@
  * Java
  * Nodejs
  * Python
+The user has to provide only the account credentials and the parameters for the data to be fetched, remaining all actions will be performed by the module 
