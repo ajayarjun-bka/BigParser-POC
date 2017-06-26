@@ -12,10 +12,14 @@ Refer `app.js` for example and read below to learn how to use the methods.
 ```javascript
  fetchHeader(emailId, password, gridId, callback)
 ```
+To fetch the structure of the specified grid
+
 ```javascript
  fetchData(emailId, password, data, callback)
 ```
-Replace emailId and password in function calls with your bigparser account details.
+To fetch rows from the specified grid. Parameters to query the grid are passed through `data` argument as a part of the post request
+
+*Replace emailId and password in function calls with your bigparser account details.**Fetches the structure of the specified grid.*
 
 ## Description of the Methods:
 
