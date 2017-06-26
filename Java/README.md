@@ -11,6 +11,8 @@ Replace emailId and password in function calls with your bigparser account detai
 ```java
  public static String fetchData(String emailId, String password, String data)
 ```
+Replace emailId and password in function calls with your bigparser account details. 
+
 ## Description of the Methods:
 
 
