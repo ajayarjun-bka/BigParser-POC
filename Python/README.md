@@ -1,6 +1,6 @@
 # Python Module for BigParser
 
-This module comprises of `BpData.py`.Copy the module folder into the root directory of your app and then include this line of code into `app.py` to import the module into your code.
+This module comprises of `BpData.py`.Copy the module folder into the root directory of your app and then include this line of code into `app.py` to import the module into your code. Replace emailId and password in function calls with your bigparser account details.
 ```python
 from module import BpData
 ``` 
