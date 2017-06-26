@@ -97,7 +97,13 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
 
 * `rowCount`	- *required* - No of rows to fetch. If value not provided then default is 10
 
-* `selectColumnNames` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
+* `selectColumnsStoreName` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
+**sample format**
+
+```javascript
+   "selectColumnsStoreName": [0, 3]
+```
+*columnIds start with zero*
 
 * `tags`-	*optional* - array of column level filters. 
 
