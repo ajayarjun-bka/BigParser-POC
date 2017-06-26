@@ -2,6 +2,8 @@
 
 This module comprises of `BpData.java`. Import the BpData.java into your class to use the methods available to interact with BigParser's API's. Refer the `app.java` for example and read below to learn how to use the methods.
 
+Replace emailId and password in function calls with your bigparser account details.
+
 **Available Methods:**
 ```java
  public static String fetchHeader(String emailId, String password, String gridId)
