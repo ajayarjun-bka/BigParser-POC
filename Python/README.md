@@ -12,9 +12,15 @@ Refer `app.py` for example and read below to learn how to use the methods.
 ```python
  fetchHeader(emailId, password, gridId)
 ```
+To fetch structure of specified grid
+
 ```python
  fetchData(emailId, password, data)
 ```
+To fetch rows from the specified grid. Parameters to query the grid are passed through `data` argument as a part of the post request
+
+*Replace emailId and password in function calls with your bigparser account details.*
+
 ## Description of the Methods:
 
 
