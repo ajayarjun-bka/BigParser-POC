@@ -98,6 +98,7 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
 * `rowCount`	- *required* - No of rows to fetch. If value not provided then default is 10
 
 * `selectColumnsStoreName` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
+
 **sample format**
 
 ```javascript
