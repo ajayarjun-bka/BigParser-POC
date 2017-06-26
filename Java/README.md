@@ -172,6 +172,6 @@ BpData.fetchData("abc@xyz.com", "password","{\"gridId\":\"57a33a99e4b019ed65d2b0
    
    **Code:** *Appropriate Error code will be displayed*
    
-   **Content:** *Error message will be dispplayed in the reponse*
+   **Content:** *Error message will be displayed in the response*
    ##
 
