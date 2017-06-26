@@ -5,6 +5,8 @@ This module comprises of `bpData.js` and `rest.js`. Copy the modules folder into
 var BpData = require('./modules/bpData');
 ``` 
 Refer `app.js` for example and read below to learn how to use the methods.
+#### Dependencies:
+`request` module has to be installed for this module to work. Please add `request`, version `^2.81.0` in package.json under `dependencies`
 
 **Availalble Methods:**
 ```javascript
