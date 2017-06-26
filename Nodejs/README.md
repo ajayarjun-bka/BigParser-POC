@@ -1,6 +1,6 @@
 # Nodejs Module for BigParser
 
-This module comprises of `bpData.js` and `rest.js`. Copy the modules folder into the root directory of your app and then include this line of code into `app.js` to import the module into your code.
+This module comprises of `bpData.js` and `rest.js`. Copy the modules folder into the root directory of your app and then include this line of code into `app.js` to import the module into your code.Replace emailId and password in function calls with your bigparser account details.
 ```javascript 
 var BpData = require('./modules/bpData');
 ``` 
