@@ -31,7 +31,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
  
    `emailId` - emailId/username of your account
    
-   `password` - password to loging into bigparser account
+   `password` - password to login into BigParser account
    
    `gridId` - Id of the grid to be queried
    
@@ -87,7 +87,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
    
    **Code:** *Appropriate Error code will be displayed*
    
-   **Content:** *Error message will be dispplayed in the reponse*
+   **Content:** *Error message will be displayed in the response*
 ##   
 #### fetchData
 ```java
@@ -101,7 +101,7 @@ Refer `app.js` for example and read below to learn how to use the methods.
  
    `emailId` - emailId/username of your account
    
-   `password` - password to loging into bigparser account
+   `password` - password to login into BigParser account
    
    `callback` - callback function to handle the response
    
@@ -114,7 +114,14 @@ Refer `app.js` for example and read below to learn how to use the methods.
 
 * `rowCount`	- *required* - No of rows to fetch. If value not provided then default is 10
 
-* `selectColumnNames` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
+* `selectColumnsStoreName` - *optional* - array of column store name which you like to fetch, by default all columns will be fetched
+
+	**sample format**
+
+```javascript
+   "selectColumnsStoreName": [0, 3]
+```
+*columnIds start with zero*
 
 * `tags`-	*optional* - array of column level filters. 
 
@@ -193,5 +200,5 @@ BpData.fetchData("abc@xyz.com", "password", {
    
    **Code:** *Appropriate Error code will be displayed*
    
-   **Content:** *Error message will be dispplayed in the reponse*
+   **Content:** *Error message will be displayed in the response*
 ##
