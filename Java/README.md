@@ -8,7 +8,7 @@ Replace emailId and password in function calls with your bigparser account detai
 ```java
  public static String fetchHeader(String emailId, String password, String gridId)
 ```
-To fetch the structure of the specified grid.*
+To fetch the structure of the specified grid.
 
 ```java
  public static String fetchData(String emailId, String password, String data)
