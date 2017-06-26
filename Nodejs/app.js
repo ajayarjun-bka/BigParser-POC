@@ -1,3 +1,4 @@
+// Import the module into the main app
 
 var BpData = require('./modules/bpData');
 
