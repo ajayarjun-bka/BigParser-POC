@@ -22,7 +22,7 @@ Refer `app.py` for example and read below to learn how to use the methods.
 ```python
 fetchHeader( emailId, password, gridId)
 ```
-*Fetches rows from the specified grid.*
+*Fetches the structure of the specified grid.*
 
 **Arguments**
 
@@ -110,7 +110,7 @@ fetchHeader( emailId, password, gridId)
 ```javascript
    "selectColumnsStoreName": [0, 3]
 ```
-*columnIds start with zero*
+*columnId start with zero*
 
 * `tags`-	*optional* - array of column level filters. 
 
