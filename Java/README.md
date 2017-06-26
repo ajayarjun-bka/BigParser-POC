@@ -101,9 +101,9 @@ This module comprises of `BpData.java`. Import the BpData.java into your class t
 
 	**sample format**
 
-	```javascript
-	   "selectColumnsStoreName": [0, 3]
-	```
+```javascript
+   "selectColumnsStoreName": [0, 3]
+```
 	*columnIds start with zero*
 
 * `tags`-	*optional* - array of column level filters. 
