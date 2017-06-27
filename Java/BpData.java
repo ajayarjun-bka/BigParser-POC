@@ -1,13 +1,3 @@
-package base;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * BpData This class implements the methods needed to connect to BigParser's API
  * to authenticate and fetch the required data
@@ -113,14 +103,9 @@ final public class BpData {
 		String response = BpData.post(uri, header, body);
 		String authId = null;
 		if (response.length() > 0) {
-			try {
 				int start = response.indexOf("\"authId\"") + 10;
 				int end = response.indexOf("\",\"subscriptionInfo\"");
 				authId = response.substring(start, end);
-			} catch (RuntimeException e) {
-				System.out.println(e.getMessage());
-				System.exit(0);
-			}
 		}
 		return authId;
 	}
