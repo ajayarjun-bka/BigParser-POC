@@ -26,8 +26,10 @@ var BpData = {
         });
     },
 
-//Function to fetch header of a grid. gridId should be specified
 
+//Function to fetch Data from grid. gridId is required. Additional parameters can be specified as JSON object. 
+//Refer API documentation for format of JSON
+    
     fetchData: function (username, password, data,callback) {
         this.login(username, password, (key) => {
             authID = key;
@@ -39,9 +41,8 @@ var BpData = {
         });
     },
 
-//Function to fetch Data from grid. gridId is required. Additional parameters can be specified as JSON object. 
-//Refer API documentation for format of JSON
-
+//Function to fetch header of a grid. gridId should be specified
+    
     fetchHeader: function (username, password, gridId,callback) {
         this.login(username, password, (key) => {
             authID = key;
